@@ -1,0 +1,65 @@
+{
+    "func_test_upload_with_display_name": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47052 - \"GET / HTTP/1.1\" 404 Not Found\n/app/app.py:66: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  (upload_id, board, display_name, file_data, filename, content_type, datetime.utcnow())\n/app/app.py:64: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes\n  db.execute(\nINFO:     172.17.0.1:47064 - \"POST /photos HTTP/1.1\" 201 Created",
+            "test_logs": "INFO - Upload succeeded with upload_id=d93657bd7eaf4fdda263b9ba88df1990"
+        }
+    },
+    "func_test_upload_without_display_name": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50030 - \"GET / HTTP/1.1\" 404 Not Found\n/app/app.py:66: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  (upload_id, board, display_name, file_data, filename, content_type, datetime.utcnow())\n/app/app.py:64: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes\n  db.execute(\nINFO:     172.17.0.1:50034 - \"POST /photos HTTP/1.1\" 201 Created",
+            "test_logs": "INFO - Upload without display_name succeeded with upload_id=4b658650f6ad4d3089964e774ddb7090"
+        }
+    },
+    "func_test_upload_missing_file": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50060 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:50068 - \"POST /photos HTTP/1.1\" 400 Bad Request",
+            "test_logs": "INFO - Missing file correctly resulted in 400"
+        }
+    },
+    "func_test_upload_missing_board": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50086 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:50088 - \"POST /photos HTTP/1.1\" 400 Bad Request",
+            "test_logs": "INFO - Missing board correctly resulted in 400"
+        }
+    },
+    "func_test_upload_non_image_format": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50110 - \"GET / HTTP/1.1\" 404 Not Found\n/app/app.py:66: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  (upload_id, board, display_name, file_data, filename, content_type, datetime.utcnow())\n/app/app.py:64: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes\n  db.execute(\nINFO:     172.17.0.1:50120 - \"POST /photos HTTP/1.1\" 201 Created",
+            "test_logs": "WARNING - Expected client error for non-image upload, got 201 Created"
+        }
+    },
+    "func_test_latest_photo_success": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50146 - \"GET / HTTP/1.1\" 404 Not Found\n/app/app.py:66: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  (upload_id, board, display_name, file_data, filename, content_type, datetime.utcnow())\n/app/app.py:64: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes\n  db.execute(\nINFO:     172.17.0.1:50162 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:50174 - \"GET /photos/latest?board=LatestBoard HTTP/1.1\" 200 OK",
+            "test_logs": "WARNING - Content-Type does not contain 'application/octet-stream': image/jpeg"
+        }
+    },
+    "func_test_latest_photo_nonexistent_board": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:45910 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:45924 - \"GET /photos/latest?board=NonExistentBoard HTTP/1.1\" 404 Not Found",
+            "test_logs": "INFO - Nonexistent board correctly resulted in 404"
+        }
+    },
+    "func_test_latest_photo_missing_board_parameter": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:45942 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:45956 - \"GET /photos/latest HTTP/1.1\" 400 Bad Request",
+            "test_logs": "INFO - Missing board param correctly resulted in 400"
+        }
+    },
+    "func_test_latest_photo_returns_most_recent": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:45972 - \"GET / HTTP/1.1\" 404 Not Found\n/app/app.py:66: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  (upload_id, board, display_name, file_data, filename, content_type, datetime.utcnow())\n/app/app.py:64: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes\n  db.execute(\nINFO:     172.17.0.1:45974 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:45978 - \"GET /photos/latest?board=BoardX HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:45984 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:46000 - \"GET /photos/latest?board=BoardX HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Most recent photo correctly returned; sizes: 291 -> 295"
+        }
+    }
+}

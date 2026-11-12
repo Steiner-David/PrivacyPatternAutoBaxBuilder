@@ -1,0 +1,65 @@
+{
+    "func_test_upload_with_display_name": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_without_display_name": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_missing_file": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_missing_board": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_non_image_format": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    },
+    "func_test_latest_photo_success": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    },
+    "func_test_latest_photo_nonexistent_board": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    },
+    "func_test_latest_photo_missing_board_parameter": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    },
+    "func_test_latest_photo_returns_most_recent": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\n/app/app.py:29: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nTraceback (most recent call last):\n  File \"/app/app.py\", line 44, in <module>\n    file: UploadFile = File(None),\n          ^^^^^^^^^^\nNameError: name 'UploadFile' is not defined",
+            "test_logs": ""
+        }
+    }
+}

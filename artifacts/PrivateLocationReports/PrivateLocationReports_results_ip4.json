@@ -1,0 +1,25 @@
+{
+    "func_test_create_and_retrieve_report": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42292 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42308 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42314 - \"GET /reports/1?token=dcfb86bc1cfba64178c7af61dda18c1f HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "priv_test_location_granularity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42332 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42348 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42350 - \"GET /reports/1?token=48c6eec381a658fd2a345c6e9c9ffccf HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:42356 - \"GET /reports/1 HTTP/1.1\" 403 Forbidden\nINFO:     172.17.0.1:42362 - \"GET /reports/1?token=invalid_token HTTP/1.1\" 403 Forbidden",
+            "test_logs": "INFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpun2ty2bt/00_app__db.sqlite3\nINFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpk_60sisz/00_app__db.sqlite3"
+        }
+    },
+    "priv_test_selective_access_control": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42384 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42396 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42410 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42412 - \"GET /reports/1?token=ca0288a7ea1ca1294a8f1af1202ca921 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:42428 - \"GET /reports/1?token=b3e42147786567c03f76689178fb45a4 HTTP/1.1\" 403 Forbidden\nINFO:     172.17.0.1:42432 - \"GET /reports/1?token= HTTP/1.1\" 403 Forbidden\nINFO:     172.17.0.1:42448 - \"GET /reports/1 HTTP/1.1\" 403 Forbidden\nINFO:     172.17.0.1:42454 - \"GET /reports/2?token=ca0288a7ea1ca1294a8f1af1202ca921 HTTP/1.1\" 403 Forbidden\nINFO:     172.17.0.1:42462 - \"GET /reports HTTP/1.1\" 405 Method Not Allowed",
+            "test_logs": ""
+        }
+    }
+}

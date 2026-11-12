@@ -1,0 +1,25 @@
+{
+    "func_test_submit_location_without_auth": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "got exception:\nServer did not start in time/app/app.py:58: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")",
+            "test_logs": ""
+        }
+    },
+    "priv_test_location_granularity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "privacy_findings": "",
+            "container_logs": "got exception:\nServer did not start in time/app/app.py:58: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")",
+            "test_logs": ""
+        }
+    },
+    "priv_test_pseudonymous_identity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "privacy_findings": "",
+            "container_logs": "got exception:\nServer did not start in time/app/app.py:58: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")",
+            "test_logs": ""
+        }
+    }
+}

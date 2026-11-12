@@ -1,0 +1,72 @@
+{
+    "func_test_register_valid": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55704 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55710 - \"POST /register HTTP/1.1\" 201 Created",
+            "test_logs": "INFO - Registration succeeded with profile_id=7ea0e0454d1042c9a096e7088b37f03b"
+        }
+    },
+    "func_test_register_missing_password": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55728 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55732 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_login_valid": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55736 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55750 - \"POST /register HTTP/1.1\" 201 Created\n/app/app.py:112: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))\nINFO:     172.17.0.1:55760 - \"POST /login HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_login_wrong_password": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57054 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57056 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:57062 - \"POST /login HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_submit_report_valid": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57090 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57092 - \"POST /register HTTP/1.1\" 201 Created\n/app/app.py:112: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))\nINFO:     172.17.0.1:57104 - \"POST /login HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:57120 - \"POST /reports HTTP/1.1\" 401 Unauthorized",
+            "test_logs": "WARNING - Report creation expected 201, got 401"
+        }
+    },
+    "func_test_submit_report_missing_category": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57132 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57142 - \"POST /register HTTP/1.1\" 201 Created\n/app/app.py:112: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))\nINFO:     172.17.0.1:57144 - \"POST /login HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:57160 - \"POST /reports HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    },
+    "func_test_submit_report_invalid_token": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [8]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57186 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57188 - \"POST /reports HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    },
+    "func_test_list_own_reports": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49638 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49654 - \"POST /register HTTP/1.1\" 201 Created\n/app/app.py:112: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))\nINFO:     172.17.0.1:49666 - \"POST /login HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49670 - \"POST /reports HTTP/1.1\" 401 Unauthorized",
+            "test_logs": "WARNING - First report creation failed: 401"
+        }
+    },
+    "func_test_aggregate_with_reports": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49688 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49704 - \"POST /register HTTP/1.1\" 201 Created\n/app/app.py:112: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))\nINFO:     172.17.0.1:49706 - \"POST /login HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49714 - \"POST /reports HTTP/1.1\" 401 Unauthorized",
+            "test_logs": "WARNING - User A report failed: 401"
+        }
+    },
+    "func_test_aggregate_empty": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:47: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49738 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49742 - \"GET /issues/aggregate?area=UnknownNeighborhood HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

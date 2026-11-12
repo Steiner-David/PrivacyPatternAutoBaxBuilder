@@ -1,0 +1,53 @@
+{
+    "func_test_register_and_retrieve_profile": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [8]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40366 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40370 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40372 - \"GET /profile?pseudonym=39aa123b HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:41: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:34158 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:34174 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:34184 - \"GET /profile?pseudonym=1fb2b33776defea4 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:37: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:45112 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:45126 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:45134 - \"GET /profile?pseudonym=17g6u44s HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_register_missing_email": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40394 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40396 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:41: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:34196 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:34206 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:37: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:45154 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:45160 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_profile_missing_pseudonym": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40412 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40428 - \"GET /profile HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:41: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:34214 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:34218 - \"GET /profile HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:37: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:45176 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:45186 - \"GET /profile HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    }
+}

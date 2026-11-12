@@ -1,0 +1,189 @@
+{
+    "func_test_successful_checkin_known_coordinates": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47654 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:47662 - \"POST /checkin HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:46908 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:46918 - \"POST /checkin HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:51402 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:51406 - \"POST /checkin HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_missing_latitude_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47676 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:47688 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity\nINFO:     172.17.0.1:47702 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:46942 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:46946 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity\nINFO:     172.17.0.1:46960 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:51428 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:51440 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity\nINFO:     172.17.0.1:51448 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_missing_feeling_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57918 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57920 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39534 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39546 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42630 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42634 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_feeling_below_1_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57928 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57944 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39550 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39554 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42648 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42652 - \"POST /checkin HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_feeling_above_10_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57960 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57976 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39562 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39572 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42674 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42678 - \"POST /checkin HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_non_integer_feeling_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57992 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:58006 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39578 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39586 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42688 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42690 - \"POST /checkin HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_stats_empty_when_no_checkins": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:58036 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:58044 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39610 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39624 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42698 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42710 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_single_checkin_stats": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49054 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49056 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49064 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:44018 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:44028 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:44036 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55674 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55682 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:55698 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_multiple_checkins_same_city": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49078 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49094 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49098 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49102 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:44040 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:44054 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:44070 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:44084 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55728 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55734 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:55738 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:55742 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_different_cities_separate_aggregates": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49120 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49134 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49148 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49154 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": "WARNING - Missing city in stats: SF={'city': 'San Francisco', 'report_count': 1, 'average_feeling': 8.0}, LA=None"
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:44102 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:44114 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:44126 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:44134 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55756 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55772 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:55776 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:55790 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_average_rounded_two_decimals": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:49: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49168 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49178 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49192 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49206 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:49218 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:54: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:44156 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:44168 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:44172 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:44174 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:44178 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "/app/app.py:66: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55802 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55812 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:55822 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:55834 - \"POST /checkin HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:55846 - \"GET /stats HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

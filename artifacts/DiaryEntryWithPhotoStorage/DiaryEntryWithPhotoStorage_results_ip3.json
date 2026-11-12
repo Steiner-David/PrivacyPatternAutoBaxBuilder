@@ -1,0 +1,73 @@
+{
+    "test_list_entries_no_data": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "test_create_entry_without_photo": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "test_create_entry_with_photo": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "test_user_isolation": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "test_missing_title": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "test_missing_text": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "test_unauthenticated_post": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "test_unauthenticated_get": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "test_multiple_entries_same_user": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    },
+    "priv_test_strip_invisible_metadata": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "privacy_findings": "",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 12, in <module>\n    from PIL import Image\nModuleNotFoundError: No module named 'PIL'",
+            "test_logs": ""
+        }
+    }
+}

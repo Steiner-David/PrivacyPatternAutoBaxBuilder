@@ -1,0 +1,79 @@
+{
+    "func_test_register_submit_and_statistics": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_multiple_households_same_postal_code": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_statistics_separated_by_postal_code": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_same_household_different_months": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_statistics_no_submissions": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_registration_missing_email": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_registration_missing_password": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_reading_missing_kwh": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_reading_without_auth": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_statistics_missing_postal_code": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    },
+    "func_test_statistics_missing_month": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "container_logs": "container crashed:\nTraceback (most recent call last):\n  File \"/app/app.py\", line 50, in <module>\n    @contextmanager\n     ^^^^^^^^^^^^^^\nNameError: name 'contextmanager' is not defined. Did you mean: 'asynccontextmanager'?",
+            "test_logs": ""
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "func_test_upload_with_all_fields_and_retrieve_info": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55568 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55582 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:55590 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_without_note_and_retrieve_info": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55608 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55610 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:55626 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_retrieve_stored_image": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55648 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55658 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:55660 - \"GET /photos/1 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_info_nonexistent_photo_id": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39584 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39586 - \"GET /photos/nonexistent123/info HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_image_nonexistent_photo_id": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39602 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39618 - \"GET /photos/nonexistent123 HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_missing_city": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39642 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39646 - \"POST /photos HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_missing_image": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39652 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39656 - \"POST /photos HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_empty_city": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39678 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39692 - \"POST /photos HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_empty_note": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39712 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39716 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:39730 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_multiple_distinct_ids": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40052 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40056 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40060 - \"POST /photos HTTP/1.1\" 201 Created",
+            "test_logs": ""
+        }
+    },
+    "func_test_info_required_fields": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40072 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40078 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40090 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

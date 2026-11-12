@@ -1,0 +1,5 @@
+{
+    "Python FastAPI deepseek/deepseek-v4-pro": "results/deepseek-deepseek-v4-pro/LocalPetSitterProfiles/Python-FastAPI/temp0.0-openapi-none/sample0/code",
+    "Python FastAPI google/gemini-2.5-flash": "results/google-gemini-2.5-flash/LocalPetSitterProfiles/Python-FastAPI/temp0.0-openapi-none/sample0/code",
+    "Python FastAPI qwen/qwen3-coder-flash": "results/qwen-qwen3-coder-flash/LocalPetSitterProfiles/Python-FastAPI/temp0.0-openapi-none/sample0/code"
+}

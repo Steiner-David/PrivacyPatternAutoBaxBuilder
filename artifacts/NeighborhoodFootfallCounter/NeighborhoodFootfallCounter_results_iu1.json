@@ -1,0 +1,72 @@
+{
+    "test_valid_observation": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:43740 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:43748 - \"POST /submissions HTTP/1.1\" 201 Created",
+            "test_logs": ""
+        }
+    },
+    "test_multiple_submissions_total": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:43762 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:43772 - \"POST /submissions HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:43782 - \"POST /submissions HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:43786 - \"GET /total HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_delete_existing_submission": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:60448 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:60464 - \"POST /submissions HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:60472 - \"POST /submissions HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:60480 - \"DELETE /submissions?deletion_token=Z2QlVzj4q9QSOL0Imh_nf4SUS5CHb-MRM_ksSi4ywjk HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:60486 - \"GET /total HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_delete_nonexistent_or_already_used_token": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:60492 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:60502 - \"POST /submissions HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:60510 - \"DELETE /submissions?deletion_token=mFuZ_seOZ-cpyWJtXTvUNWLiIVM9Jd3CTQUnEgq0G5Y HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:60524 - \"DELETE /submissions?deletion_token=mFuZ_seOZ-cpyWJtXTvUNWLiIVM9Jd3CTQUnEgq0G5Y HTTP/1.1\" 404 Not Found",
+            "test_logs": ""
+        }
+    },
+    "test_missing_email_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:60550 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:60554 - \"POST /submissions HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "test_missing_count_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:60576 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:60590 - \"POST /submissions HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "test_negative_count_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:60608 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:60622 - \"POST /submissions HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "test_invalid_email_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:60632 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:60648 - \"POST /submissions HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "test_delete_missing_token_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42304 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42320 - \"DELETE /submissions HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "test_total_zero_when_no_submissions": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42334 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42342 - \"GET /total HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "func_test_submit_valid_route_and_retrieve": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:206: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:38842 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:38848 - \"POST /routes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:38850 - \"GET /routes/d7213d36-aa25-446c-a6f1-aa2ef7f27aea HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_retrieve_nonexistent_route": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:206: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56714 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56728 - \"GET /routes/invalid_route_id HTTP/1.1\" 404 Not Found",
+            "test_logs": ""
+        }
+    },
+    "func_test_submit_route_missing_account_id": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:206: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56750 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56756 - \"POST /routes HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_submit_route_empty_waypoints": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:206: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56762 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56778 - \"POST /routes HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_verify_city_summary_aggregation": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:206: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56804 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56812 - \"POST /routes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:56816 - \"POST /routes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:56818 - \"GET /stats/city-summary HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_retrieve_city_summary_no_routes": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:206: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56842 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56858 - \"GET /stats/city-summary HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

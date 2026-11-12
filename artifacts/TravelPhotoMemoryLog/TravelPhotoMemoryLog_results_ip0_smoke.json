@@ -1,0 +1,88 @@
+{
+    "func_test_upload_with_all_fields_and_retrieve_info": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41768 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41784 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41786 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_without_note_and_retrieve_info": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41794 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41806 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41820 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_retrieve_stored_image": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41824 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41834 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41848 - \"GET /photos/1 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_info_nonexistent_photo_id": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41872 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41882 - \"GET /photos/nonexistent123/info HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_image_nonexistent_photo_id": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41894 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41906 - \"GET /photos/nonexistent123 HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_missing_city": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41990 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42004 - \"POST /photos HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_missing_image": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42034 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42046 - \"POST /photos HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_empty_note": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42060 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42074 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42080 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_upload_multiple_distinct_ids": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42106 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42120 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42132 - \"POST /photos HTTP/1.1\" 201 Created",
+            "test_logs": ""
+        }
+    },
+    "func_test_info_required_fields": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42146 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42158 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42174 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "priv_test_strip_invisible_metadata": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "privacy_findings": "STRIP_INVISIBLE_METADATA (Strip Invisible Metadata)",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42178 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42194 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42200 - \"GET /photos/1 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:42206 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": "WARNING - Forbidden metadata found in downloaded image\nINFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmp2n1s2d2j/00_app__db.sqlite3\nINFO - Found forbidden invisible metadata in SQLite DB /app/db.sqlite3 table photos\nWARNING - Forbidden metadata found in SQLite database\nINFO - Discovered file candidate paths: ['/app/app.py', '/app/db.sqlite3', '/app/Dockerfile', '/app/requirements.txt', '/tmp/query.sql', '/tmp/node-compile-cache/v22.20.0-x64-9ac5647c-0/56540125', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/00bf0630', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/00e7fb07', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/01c08d40', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0210c87e', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0275a71a', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/027fd99b', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/029c3683', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0372a7e7', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03ba72c0', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03bfe4fd', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03eb5b13', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0419a2df', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/047bd52f', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/048a4c2a', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/04e65cde', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/052c232d', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0535d717', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/053fed39', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0555bc32', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0569cc9e', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/05efb5e6', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/\n\n[...log truncated: output exceeds 2000 characters...]"
+        }
+    },
+    "priv_test_location_granularity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "privacy_findings": "LOCATION_GRANULARITY (Location Granularity)",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:46490 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:46492 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:46494 - \"GET /photos/1 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:46508 - \"GET /photos/1/info HTTP/1.1\" 200 OK",
+            "test_logs": "WARNING - Downloaded image contains forbidden invisible metadata\nINFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpdccxaygv/00_app__db.sqlite3\nINFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpnkodbmvj/00_app__db.sqlite3\nINFO - Found forbidden invisible metadata in SQLite DB /app/db.sqlite3 table photos\nWARNING - SQLite contains forbidden metadata sentinels\nINFO - Discovered file candidate paths: ['/app/app.py', '/app/db.sqlite3', '/app/Dockerfile', '/app/requirements.txt', '/tmp/query.sql', '/tmp/node-compile-cache/v22.20.0-x64-9ac5647c-0/56540125', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/00bf0630', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/00e7fb07', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/01c08d40', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0210c87e', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0275a71a', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/027fd99b', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/029c3683', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0372a7e7', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03ba72c0', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03bfe4fd', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03eb5b13', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0419a2df', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/047bd52f', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/048a4c2a', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/04e65cde', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/052c232d', '/tmp/node-compile-cache/v22.20.0-x64\n\n[...log truncated: output exceeds 2000 characters...]"
+        }
+    }
+}

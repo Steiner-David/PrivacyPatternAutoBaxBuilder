@@ -1,0 +1,37 @@
+{
+    "func_test_unknown_city_empty": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56026 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56032 - \"GET /stats?city=UnknownCity HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_missing_fields": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56052 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56066 - \"POST /ratings HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_non_numeric_rating": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56090 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56102 - \"POST /ratings HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_invalid_latitude": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:56120 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:56134 - \"POST /ratings HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_missing_city_param": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55178 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55190 - \"GET /stats HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    }
+}

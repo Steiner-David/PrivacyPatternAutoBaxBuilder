@@ -1,0 +1,76 @@
+{
+    "status": "complete",
+    "reason": "Privacy probe generation completed",
+    "selected_privacy_patterns": [
+        "LOCATION_GRANULARITY",
+        "AGGREGATION_GATEWAY"
+    ],
+    "privacy_tests_names": [
+        "priv_test_location_granularity",
+        "priv_test_aggregation_gateway"
+    ],
+    "probe_validation": {
+        "priv_test_location_granularity": {
+            "pattern_id": "LOCATION_GRANULARITY",
+            "true_positive": true,
+            "true_negative": true,
+            "unresolved_false_negative": false,
+            "unresolved_false_positive": false,
+            "statuses": [
+                "failed"
+            ],
+            "validated": true
+        },
+        "priv_test_aggregation_gateway": {
+            "pattern_id": "AGGREGATION_GATEWAY",
+            "true_positive": true,
+            "true_negative": true,
+            "unresolved_false_negative": false,
+            "unresolved_false_positive": false,
+            "statuses": [
+                "failed"
+            ],
+            "validated": true
+        }
+    },
+    "unresolved_false_negatives": [],
+    "missing_selected_patterns": [],
+    "coverage_validation": {
+        "valid": true,
+        "selected_patterns": [
+            "LOCATION_GRANULARITY",
+            "AGGREGATION_GATEWAY"
+        ],
+        "per_pattern": {
+            "LOCATION_GRANULARITY": {
+                "probes": [
+                    "priv_test_location_granularity"
+                ],
+                "validated_probes": [
+                    "priv_test_location_granularity"
+                ],
+                "errors": [],
+                "statuses": {
+                    "priv_test_location_granularity": [
+                        "failed"
+                    ]
+                }
+            },
+            "AGGREGATION_GATEWAY": {
+                "probes": [
+                    "priv_test_aggregation_gateway"
+                ],
+                "validated_probes": [
+                    "priv_test_aggregation_gateway"
+                ],
+                "errors": [],
+                "statuses": {
+                    "priv_test_aggregation_gateway": [
+                        "failed"
+                    ]
+                }
+            }
+        },
+        "errors": []
+    }
+}

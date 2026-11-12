@@ -1,0 +1,161 @@
+{
+    "func_test_register_valid_fields": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59956 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59968 - \"POST /register HTTP/1.1\" 201 Created",
+            "test_logs": "INFO - Valid registration: profile_id=p_B4C9A289323B21A01C city=San Francisco"
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:35520 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:35534 - \"POST /register HTTP/1.1\" 201 Created",
+            "test_logs": "INFO - Valid registration: profile_id=p_e7be8f4a58c7442c city=San Francisco"
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:60724 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:60740 - \"POST /register HTTP/1.1\" 201 Created",
+            "test_logs": "INFO - Valid registration: profile_id=p_b2f1618dc0054f08 city=Unknown"
+        }
+    },
+    "func_test_register_second_and_list_both": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36154 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36170 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:36184 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:36196 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Second registration and list check passed"
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55018 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55020 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:55032 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:55044 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Second registration and list check passed"
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36824 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36832 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:36846 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:36860 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Second registration and list check passed"
+        }
+    },
+    "func_test_register_missing_fields": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36224 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36236 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55062 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55074 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36876 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36882 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_register_invalid_email_format": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36266 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36276 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55098 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55104 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36890 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36898 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_register_non_numeric_latitude": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36294 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36310 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55116 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55128 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36924 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36928 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_empty_profiles_list": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36326 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36340 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Empty profile list test passed"
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:55138 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:55148 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Empty profile list test passed"
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36944 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36948 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Empty profile list test passed"
+        }
+    },
+    "func_test_register_and_list_contains_profile": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59180 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59188 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:59198 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - List contains registered profile"
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42216 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42218 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42228 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - List contains registered profile"
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41918 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41934 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41940 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - List contains registered profile"
+        }
+    },
+    "priv_test_pseudonymous_identity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59212 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59224 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:59230 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42248 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42262 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42274 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41964 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41980 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41988 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "priv_test_location_granularity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "privacy_findings": "LOCATION_GRANULARITY (Location Granularity)",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59238 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59252 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:59266 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpohej600h/00_app__db.sqlite3\nINFO - Found exact submitted precise-location value 40.7128 in SQLite DB /app/db.sqlite3 table profiles column latitude"
+        },
+        "Python FastAPI google/gemini-2.5-flash": {
+            "status": "failed",
+            "privacy_findings": "LOCATION_GRANULARITY (Location Granularity)",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42300 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42308 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42312 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpkgr_b_cc/00_app__db.sqlite3\nINFO - Found exact submitted precise-location value 40.7128 in SQLite DB /app/db.sqlite3 table profiles column latitude"
+        },
+        "Python FastAPI qwen/qwen3-coder-flash": {
+            "status": "failed",
+            "privacy_findings": "LOCATION_GRANULARITY (Location Granularity)",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42016 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42030 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42032 - \"GET /profiles HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpgzz55smb/00_app__db.sqlite3\nINFO - Found exact submitted precise-location value 40.7128 in SQLite DB /app/db.sqlite3 table profiles column latitude"
+        }
+    }
+}

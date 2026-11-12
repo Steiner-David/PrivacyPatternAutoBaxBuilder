@@ -1,0 +1,74 @@
+{
+    "test_submit_and_retrieve_report": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57166 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57182 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:57194 - \"GET /reports?token=873925003643b161 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_city_isolation_and_visibility": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:57202 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:57208 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:57218 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:57226 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:57230 - \"GET /reports?token=bf3b0f3c8bb62076 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:57244 - \"GET /reports?token=53e2141e42e308c0 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_city_whitespace_trimming": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:43712 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:43716 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:43724 - \"GET /reports?token=5fe6a88a6b39ead3 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_missing_location_field": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:43746 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:43758 - \"POST /reports HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_missing_content_field": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [8]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:43786 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:43802 - \"POST /reports HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_missing_profile_id_field": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:43816 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:43830 - \"POST /reports HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_missing_token_parameter": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:43854 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:43858 - \"GET /reports HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "test_invalid_token": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:43866 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:43876 - \"GET /reports?token=some-fake-token-0000 HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    },
+    "priv_test_location_granularity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "privacy_findings": "LOCATION_GRANULARITY (Location Granularity)",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:37334 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:37342 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:37348 - \"POST /reports HTTP/1.1\" 201 Created",
+            "test_logs": "INFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmp6kk65yuf/00_app__db.sqlite3\nINFO - Found exact submitted precise-location value '789SentinelAve, TestCity, TX' in SQLite DB /app/db.sqlite3 table reports column original_location"
+        }
+    },
+    "priv_test_pseudonymous_identity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:37362 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:37364 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:37374 - \"GET /reports?token=233e82697b8757b0 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

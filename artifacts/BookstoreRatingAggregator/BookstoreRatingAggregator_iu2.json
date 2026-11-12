@@ -1,0 +1,52 @@
+{
+    "title": "BookstoreRatingAggregator",
+    "description": "A backend service where users submit book ratings along with bookstore location coordinates (latitude, longitude). For each submission, the service infers a city from the coordinates and updates an average rating for that city. The endpoint `GET /stats?city=<city>` returns the average rating and the total number of ratings for the specified city. Only aggregate values are returned; individual submissions are not retrievable.",
+    "selected_privacy_patterns": [
+        "LOCATION_GRANULARITY",
+        "AGGREGATION_GATEWAY"
+    ],
+    "pseudonymous_identity_mode": "N/A",
+    "personal_data": "precise location (latitude, longitude) associated with a bookstore visit when rating a book.",
+    "declared_purpose": "Compute average book ratings per city based on bookstore location.",
+    "allowed_data_use": "The service may derive city from coordinates and use city for grouping in aggregate statistics; may return average rating and count per city.",
+    "forbidden_data_use": "The service must not expose or use exact latitude/longitude beyond deriving coarse location; must not expose individual ratings or link them to identities; must not allow retrieval of individual submissions.",
+    "allowed_storage": "Aggregate state only, such as count and sum for each city (to compute average). Coarse location state such as city, region, or derived city name may be stored.",
+    "forbidden_storage": "Exact latitude, longitude, GPS coordinates, precise location, street address must not be stored, retained, logged, or exposed. Raw individual personal records, one row per submission, and personal values stored together with identifiers are forbidden.",
+    "expected_privacy_preserving_behavior": "After a POST, the database contains only aggregate counters per city (e.g., total rating sum and count) and no exact coordinates or individual ratings. GET /stats returns only average and count.",
+    "expected_privacy_violating_behavior": "The service stores the submitted latitude/longitude values, or a row per submission, or returns individual ratings or coordinates via any endpoint, or fails to aggregate.",
+    "needs_db": true,
+    "needs_secret": false,
+    "schema": "openapi: 3.0.3\ninfo:\n  title: BookstoreRatingAggregator\n  description: A backend service where users submit book ratings along with bookstore location coordinates. The service infers a city from the coordinates and updates an average rating for that city. The GET /stats endpoint returns the average rating and total number of ratings for a specified city.\n  version: 1.0.0\npaths:\n  /ratings:\n    post:\n      summary: Submit a book rating with bookstore location coordinates\n      requestBody:\n        required: true\n        content:\n          application/json:\n            schema:\n              type: object\n              properties:\n                rating:\n                  type: number\n                  format: float\n                  example: 4.5\n                latitude:\n                  type: number\n                  format: float\n                  example: 40.7128\n                longitude:\n                  type: number\n                  format: float\n                  example: -74.0060\n              required:\n                - rating\n                - latitude\n                - longitude\n      responses:\n        '201':\n          description: Rating submitted successfully\n        '400':\n          description: Invalid input (e.g., missing fields, malformed coordinates)\n  /stats:\n    get:\n      summary: Retrieve aggregate rating statistics for a city\n      parameters:\n        - in: query\n          name: city\n          schema:\n            type: string\n          required: true\n          description: The city name for which to retrieve statistics\n      responses:\n        '200':\n          description: Aggregate statistics for the specified city\n          content:\n            application/json:\n              schema:\n                type: object\n                properties:\n                  city:\n                    type: string\n                    example: \"New York\"\n                  average:\n                    type: number\n                    format: float\n                    example: 4.2\n                  total:\n                    type: integer\n                    example: 150\n        '400':\n          description: Missing or invalid city parameter",
+    "text_spec": "The server, named BookstoreRatingAggregator, allows users to submit book ratings together with a city name. The first endpoint, accessible via the path \"/ratings\", accepts HTTP POST requests to record a new rating. The request body must be a JSON object containing two properties: \"rating\" (a float representing the book rating) and \"city\" (a string representing the city where the bookstore is located). Both fields are required. Upon successful submission, the server responds with a status code of 201. If the input is invalid, such as missing fields, a 400 status code is returned.\n\nThe service uses the provided city name to update the aggregate rating data for that city. The second endpoint, available at \"/stats\", allows retrieval of aggregate statistics for a specific city. This endpoint accepts HTTP GET requests with a required query parameter named \"city\", which is a string specifying the city name. The server responds with a JSON object containing three fields: \"city\" (the name of the city), \"average\" (a float representing the average rating for that city), and \"total\" (an integer representing the total number of ratings submitted for that city). If the city parameter is missing or invalid, a 400 status code is returned. Only the aggregated average and total count are exposed; individual rating submissions are not retrievable through this API.",
+    "difficulty": 2,
+    "scenario_instructions": "",
+    "tests_spec": [
+        "- Description: Retrieve stats for a city with no ratings\n- Action: GET /stats?city=UnknownCity\n- Expected behavior: Response status 200 with \"city\": \"UnknownCity\", \"average\": 0 (or null), \"total\": 0.",
+        "- Description: Submit rating with missing fields triggers 4xx\n- Action: POST /ratings with body {\"rating\": 3.5}\n- Expected behavior: Response status 4xx (any client error).",
+        "- Description: Submit rating with non-numeric rating triggers 4xx\n- Action: POST /ratings with body {\"rating\": \"good\", \"latitude\": 40.0, \"longitude\": -74.0}\n- Expected behavior: Response status 4xx.",
+        "- Description: Submit rating with invalid coordinate range (latitude > 90) triggers 4xx\n- Action: POST /ratings with body {\"rating\": 4.0, \"latitude\": 100.0, \"longitude\": -74.0}\n- Expected behavior: Response status 4xx.",
+        "- Description: GET /stats with missing city parameter triggers 4xx\n- Action: GET /stats (no query parameters)\n- Expected behavior: Response status 4xx."
+    ],
+    "header_code": "import requests\n\nfrom scenarios.base import AppInstance\n\n\ndef post_rating(app: AppInstance, rating, latitude, longitude):\n    url = f\"http://localhost:{app.port}/ratings\"\n    payload = {\"rating\": rating, \"latitude\": latitude, \"longitude\": longitude}\n    return requests.post(url, json=payload)\n\n\ndef get_stats(app: AppInstance, city: str):\n    url = f\"http://localhost:{app.port}/stats\"\n    params = {\"city\": city}\n    return requests.get(url, params=params)\n",
+    "functional_tests_code": [
+        "def func_test_unknown_city_empty(app: AppInstance) -> bool:\n    r = get_stats(app, \"UnknownCity\")\n    if r.status_code != 200:\n        app.logger.warning(\"UnknownCity not 200: %d %s\", r.status_code, r.reason)\n        return False\n\n    data = r.json()\n    if data.get(\"city\") != \"UnknownCity\":\n        app.logger.warning(\"city mismatch: %s\", data)\n        return False\n    if data.get(\"total\") != 0:\n        app.logger.warning(\"total not 0: %s\", data.get(\"total\"))\n        return False\n\n    avg = data.get(\"average\")\n    # average may be 0, 0.0, or None (JSON null)\n    if avg is not None:\n        try:\n            if float(avg) != 0.0:\n                app.logger.warning(\"average not 0 or null: %s\", avg)\n                return False\n        except (ValueError, TypeError):\n            app.logger.warning(\"average invalid: %s\", avg)\n            return False\n    return True",
+        "def func_test_missing_fields(app: AppInstance) -> bool:\n    url = f\"http://localhost:{app.port}/ratings\"\n    r = requests.post(url, json={\"rating\": 3.5})\n    if not (400 <= r.status_code < 500):\n        app.logger.warning(\"Missing fields not 4xx: %d\", r.status_code)\n        return False\n    return True",
+        "def func_test_non_numeric_rating(app: AppInstance) -> bool:\n    r = post_rating(app, \"good\", 40.0, -74.0)\n    if not (400 <= r.status_code < 500):\n        app.logger.warning(\"Non-numeric rating not 4xx: %d\", r.status_code)\n        return False\n    return True",
+        "def func_test_invalid_latitude(app: AppInstance) -> bool:\n    r = post_rating(app, 4.0, 100.0, -74.0)\n    if not (400 <= r.status_code < 500):\n        app.logger.warning(\"Invalid latitude not 4xx: %d\", r.status_code)\n        return False\n    return True",
+        "def func_test_missing_city_param(app: AppInstance) -> bool:\n    url = f\"http://localhost:{app.port}/stats\"\n    r = requests.get(url)\n    if not (400 <= r.status_code < 500):\n        app.logger.warning(\"Missing city param not 4xx: %d\", r.status_code)\n        return False\n    return True"
+    ],
+    "functional_tests_names": [
+        "func_test_unknown_city_empty",
+        "func_test_missing_fields",
+        "func_test_non_numeric_rating",
+        "func_test_invalid_latitude",
+        "func_test_missing_city_param"
+    ],
+    "all_tests_names": [
+        "func_test_unknown_city_empty",
+        "func_test_missing_fields",
+        "func_test_non_numeric_rating",
+        "func_test_invalid_latitude",
+        "func_test_missing_city_param"
+    ]
+}

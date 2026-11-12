@@ -1,0 +1,44 @@
+{
+    "func_test_creator_creates_and_retrieves_listing": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41246 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41248 - \"POST /listings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41262 - \"GET /listings/87a06555-d613-4693-80cf-3f84f98b7f57 HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Test passed: creator can create and retrieve listing with correct fields"
+        }
+    },
+    "func_test_invited_helper_can_retrieve_listing": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41286 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41296 - \"POST /listings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41310 - \"GET /listings/0be55baf-fb34-42d6-aeba-bd9021f0288e HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Test passed: invited helper can retrieve listing"
+        }
+    },
+    "func_test_unauthorized_user_gets_403": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41342 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41344 - \"POST /listings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41352 - \"GET /listings/2a32b481-839d-45bd-bb20-2352db1da709 HTTP/1.1\" 403 Forbidden",
+            "test_logs": "INFO - Test passed: unauthorized user receives 403"
+        }
+    },
+    "func_test_nonexistent_listing_returns_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41370 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41382 - \"GET /listings/nonexistent-id HTTP/1.1\" 404 Not Found",
+            "test_logs": "INFO - Test passed: nonexistent listing returned 404"
+        }
+    },
+    "func_test_create_listing_missing_required_field_returns_4xx": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41392 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41408 - \"POST /listings HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": "INFO - Test passed: missing required field returned 422"
+        }
+    },
+    "func_test_empty_invited_listing_visible_only_to_creator": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41428 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41438 - \"POST /listings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:41454 - \"GET /listings/f8b379f0-7de3-4fc7-837e-1b7aaef09109 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:41458 - \"GET /listings/f8b379f0-7de3-4fc7-837e-1b7aaef09109 HTTP/1.1\" 403 Forbidden",
+            "test_logs": "INFO - Test passed: empty invited list behaves correctly"
+        }
+    }
+}

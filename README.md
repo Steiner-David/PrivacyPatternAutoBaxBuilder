@@ -20,10 +20,6 @@ Please cite the original AutoBaxBuilder work when using this repository:
 }
 ```
 
-## Academic Context
-
-This tool was created for the course **Privacy Engineering in Practice (PEng in Practice)** at the **University of Salzburg**.
-
 ## What This Repository Does
 
 For a newly generated benchmark, the main workflow consists of three CLI stages that must be run in order:

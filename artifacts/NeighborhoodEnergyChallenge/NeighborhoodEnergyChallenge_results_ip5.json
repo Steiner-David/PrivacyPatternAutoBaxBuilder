@@ -1,0 +1,95 @@
+{
+    "func_test_register_submit_and_statistics": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40142 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40156 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40166 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40180 - \"GET /statistics?postal_code=12345&month=2025-03 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_multiple_households_same_postal_code": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40208 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40210 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40218 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40222 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40238 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40242 - \"GET /statistics?postal_code=12345&month=2025-03 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_statistics_separated_by_postal_code": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40248 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40256 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40262 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40266 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40270 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40278 - \"GET /statistics?postal_code=11111&month=2025-03 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:40282 - \"GET /statistics?postal_code=22222&month=2025-03 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_same_household_different_months": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:40296 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:40312 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40314 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40328 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:40344 - \"GET /statistics?postal_code=12345&month=2025-03 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:40346 - \"GET /statistics?postal_code=12345&month=2025-04 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_statistics_no_submissions": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59044 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59046 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:59060 - \"GET /statistics?postal_code=12345&month=2025-05 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_registration_missing_email": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59080 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59090 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_registration_missing_password": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59110 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59112 - \"POST /register HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_reading_missing_kwh": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59138 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59154 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:59160 - \"POST /readings HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_reading_without_auth": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59188 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59198 - \"POST /readings HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    },
+    "func_test_statistics_missing_postal_code": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59222 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59232 - \"GET /statistics?month=2025-03 HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_statistics_missing_month": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:54288 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:54296 - \"GET /statistics?postal_code=12345 HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "priv_test_location_granularity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:54318 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:54320 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54324 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54336 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54338 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54346 - \"GET /statistics?postal_code=12345&month=2025-04 HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpemmq0e_u/00_app__db.sqlite3"
+        }
+    },
+    "priv_test_aggregation_gateway": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:54370 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:54380 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54388 - \"POST /register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54392 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54400 - \"POST /readings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54402 - \"GET /statistics?postal_code=12345&month=2025-03 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:54410 - \"GET /statistics?postal_code=67890&month=2025-03 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

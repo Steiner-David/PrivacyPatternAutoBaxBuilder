@@ -1,0 +1,44 @@
+{
+    "func_test_submit_valid_route_and_retrieve": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "failed",
+            "container_logs": "/app/app.py:215: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52000 - \"GET / HTTP/1.1\" 404 Not Found\n/app/app.py:91: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/\n  route_id = f\"route_{hash(str(route_data.account_id) + str([w.dict() for w in route_data.waypoints]))}\"\nINFO:     172.17.0.1:52012 - \"POST /routes HTTP/1.1\" 201 Created",
+            "test_logs": "WARNING - No route_id found in POST response"
+        }
+    },
+    "func_test_retrieve_nonexistent_route": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:215: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52032 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:52042 - \"GET /routes/invalid_route_id HTTP/1.1\" 404 Not Found",
+            "test_logs": ""
+        }
+    },
+    "func_test_submit_route_missing_account_id": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:215: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52050 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:52064 - \"POST /routes HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_submit_route_empty_waypoints": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:215: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52082 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:52088 - \"POST /routes HTTP/1.1\" 400 Bad Request",
+            "test_logs": ""
+        }
+    },
+    "func_test_verify_city_summary_aggregation": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:215: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52098 - \"GET / HTTP/1.1\" 404 Not Found\n/app/app.py:91: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/\n  route_id = f\"route_{hash(str(route_data.account_id) + str([w.dict() for w in route_data.waypoints]))}\"\nINFO:     172.17.0.1:52108 - \"POST /routes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:52116 - \"POST /routes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:52124 - \"GET /stats/city-summary HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_retrieve_city_summary_no_routes": {
+        "Python FastAPI qwen/qwen3-coder": {
+            "status": "passed",
+            "container_logs": "/app/app.py:215: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:34264 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:34266 - \"GET /stats/city-summary HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "func_test_submit_location_without_auth": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:60: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59086 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59098 - \"POST /locations HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    },
+    "priv_test_location_granularity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "privacy_findings": "LOCATION_GRANULARITY (Location Granularity)",
+            "container_logs": "/app/app.py:60: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59122 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59136 - \"GET /summary HTTP/1.1\" 204 No Content\nINFO:     172.17.0.1:59140 - \"POST /auth/register HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:59152 - \"POST /locations HTTP/1.1\" 201 Created",
+            "test_logs": "INFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmpxg6dv2th/00_app__db.sqlite3\nINFO - Found forbidden precise-location column raw_lat in SQLite DB /app/db.sqlite3 table submissions\nWARNING - Precise coordinates found in database \u2013 violation"
+        }
+    },
+    "priv_test_pseudonymous_identity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "privacy_findings": "PSEUDONYMOUS_IDENTITY (Pseudonymous Identity)",
+            "container_logs": "/app/app.py:60: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:59178 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:59192 - \"POST /auth/register HTTP/1.1\" 201 Created",
+            "test_logs": ""
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "func_test_create_and_retrieve_metadata_as_owner": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:37734 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:37748 - \"POST /recipes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:37764 - \"GET /recipes/92c877d6-f004-4619-b418-6718cdf1eb62 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_owner_downloads_photo": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39198 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39204 - \"POST /recipes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:39220 - \"GET /recipes/8e92d846-c6f1-4757-94f9-6d5c24d8d74e/photo HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_authorized_viewer_retrieves_metadata_and_photo": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39226 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39234 - \"POST /recipes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:39242 - \"GET /recipes/2c778abc-75b9-4414-b320-6589d57980ce HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:39248 - \"GET /recipes/2c778abc-75b9-4414-b320-6589d57980ce/photo HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_unauthorized_user_access_denied": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39260 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39266 - \"POST /recipes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:39280 - \"GET /recipes/b43328c0-af24-4507-b308-dcf58c373b40 HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39286 - \"GET /recipes/b43328c0-af24-4507-b308-dcf58c373b40/photo HTTP/1.1\" 404 Not Found",
+            "test_logs": ""
+        }
+    },
+    "func_test_nonexistent_recipe_returns_client_error": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39308 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39316 - \"GET /recipes/nonexistent123 HTTP/1.1\" 404 Not Found",
+            "test_logs": ""
+        }
+    },
+    "func_test_create_recipe_missing_required_fields": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39334 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39344 - \"POST /recipes HTTP/1.1\" 422 Unprocessable Entity\nINFO:     172.17.0.1:39360 - \"POST /recipes HTTP/1.1\" 422 Unprocessable Entity\nINFO:     172.17.0.1:39368 - \"POST /recipes HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "priv_test_strip_invisible_metadata": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:39380 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39384 - \"POST /recipes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:39398 - \"GET /recipes/c7ce6769-6160-414f-954f-4e06caa2d693 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:39404 - \"GET /recipes/c7ce6769-6160-414f-954f-4e06caa2d693/photo HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:39408 - \"GET /recipes/c7ce6769-6160-414f-954f-4e06caa2d693/photo HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:39416 - \"GET /recipes/c7ce6769-6160-414f-954f-4e06caa2d693 HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:39426 - \"GET /recipes/c7ce6769-6160-414f-954f-4e06caa2d693/photo HTTP/1.1\" 404 Not Found",
+            "test_logs": "INFO - Discovered file candidate paths: ['/app/app.py', '/app/db.sqlite3', '/app/Dockerfile', '/app/requirements.txt']\nINFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmph64g8uu6/00_app__db.sqlite3"
+        }
+    },
+    "priv_test_location_granularity": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:35994 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36002 - \"POST /recipes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:36006 - \"GET /recipes/7b4189b5-0681-40cd-8369-32df5f17133e HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:36016 - \"GET /recipes/7b4189b5-0681-40cd-8369-32df5f17133e/photo HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:36026 - \"GET /recipes/7b4189b5-0681-40cd-8369-32df5f17133e/photo HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Discovered SQLite database candidate paths: ['/app/db.sqlite3']\nDEBUG - SQLite sidecar /app/db.sqlite3-wal was not present\nDEBUG - SQLite sidecar /app/db.sqlite3-shm was not present\nINFO - Inspecting discovered SQLite database /app/db.sqlite3 via local copy /tmp/tmp_nz65zgc/00_app__db.sqlite3\nINFO - Discovered file candidate paths: ['/app/app.py', '/app/db.sqlite3', '/app/Dockerfile', '/app/requirements.txt']"
+        }
+    },
+    "priv_test_selective_access_control": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "/app/app.py:34: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:36040 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36056 - \"POST /recipes HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:36070 - \"GET /recipes/cef558b6-3199-4e8f-b06e-600083af1263 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:36084 - \"GET /recipes/cef558b6-3199-4e8f-b06e-600083af1263 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:36086 - \"GET /recipes/cef558b6-3199-4e8f-b06e-600083af1263 HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36100 - \"GET /recipes/cef558b6-3199-4e8f-b06e-600083af1263/photo HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:36112 - \"GET /recipes/cef558b6-3199-4e8f-b06e-600083af1263/photo HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

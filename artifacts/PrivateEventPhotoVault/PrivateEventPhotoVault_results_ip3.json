@@ -1,0 +1,74 @@
+{
+    "test_upload_and_retrieve_photo": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:58458 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:58468 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:58482 - \"GET /photos/fe13cc7887ef47bf838c6430a9e9d605?token=event123 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_upload_without_token": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [8]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:58500 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:58510 - \"POST /photos HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_upload_without_photo": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:58526 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:58540 - \"POST /photos HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_download_missing_token": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50842 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:50850 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:50860 - \"GET /photos/bbbb3d59996e4291af567907a9056891 HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    },
+    "test_download_wrong_token": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50874 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:50878 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:50880 - \"GET /photos/94ed24a35ecf421a9d7bbbf37752c5f4?token=wrongToken HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    },
+    "test_download_nonexistent_photo": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50908 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:50918 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:50924 - \"GET /photos/nonexistent123?token=validToken HTTP/1.1\" 404 Not Found",
+            "test_logs": ""
+        }
+    },
+    "test_multiple_uploads_unique_ids_and_access": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:50952 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:50964 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:50974 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:50988 - \"GET /photos/e3ab32ac5e3f4ccf831f94df4b0c5bb8?token=tokA HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:50998 - \"GET /photos/5b339f29ff864f5aa4b38f5f2f973951?token=tokB HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:51006 - \"GET /photos/e3ab32ac5e3f4ccf831f94df4b0c5bb8?token=tokB HTTP/1.1\" 401 Unauthorized\nINFO:     172.17.0.1:51010 - \"GET /photos/5b339f29ff864f5aa4b38f5f2f973951?token=tokA HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    },
+    "test_download_size_unchanged": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:51024 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:51032 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:51046 - \"GET /photos/e4919b61280046fa8b1e4d3c35b06a10?token=evt HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "priv_test_strip_invisible_metadata": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:51076 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:51082 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:51088 - \"GET /photos/9412edc2687d4f7a85b978605eaf1705?token=token-a8e68a34c81840be961649a9af19858b HTTP/1.1\" 200 OK",
+            "test_logs": "INFO - Discovered file candidate paths: ['/app/app.py', '/app/db.sqlite3', '/app/Dockerfile', '/app/requirements.txt', '/tmp/query.sql', '/tmp/node-compile-cache/v22.20.0-x64-9ac5647c-0/56540125', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/00bf0630', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/00e7fb07', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/01c08d40', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0210c87e', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0275a71a', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/027fd99b', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/029c3683', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0372a7e7', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03ba72c0', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03bfe4fd', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/03eb5b13', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0419a2df', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/047bd52f', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/048a4c2a', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/04e65cde', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/052c232d', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0535d717', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/053fed39', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0555bc32', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0569cc9e', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/05efb5e6', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0602fe48', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0757f02c', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/077049fd', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/07ce6261', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/09a7ebaf', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/09cc6bf3', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/09e57034', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0abe949a', '/tmp/node-compile-cache/v22.20.0-x64-9de703df-0/0bb0939e', '/t\n\n[...log truncated: output exceeds 2000 characters...]"
+        }
+    },
+    "priv_test_selective_access_control": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "exception",
+            "privacy_findings": "",
+            "container_logs": "/app/app.py:26: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:34456 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:34464 - \"POST /photos HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:34480 - \"GET /photos/c5fd0dfe58534d5ca319f446254a2a12?token=valid-selective-token HTTP/1.1\" 200 OK",
+            "test_logs": "ERROR - Authorized response does not contain the expected sentinel; probe cannot verify access control"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "func_test_submit_location_without_auth": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "/app/app.py:58: DeprecationWarning: \n        on_event is deprecated, use lifespan event handlers instead.\n\n        Read more about it in the\n        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n        \n  @app.on_event(\"startup\")\nINFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:41882 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:41894 - \"POST /locations HTTP/1.1\" 401 Unauthorized",
+            "test_logs": ""
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "func_test_create_and_retrieve_report": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:53700 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:53706 - \"POST /reports HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:53710 - \"GET /reports/1?token=aa6ad348857fbd2309970103405983fb HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

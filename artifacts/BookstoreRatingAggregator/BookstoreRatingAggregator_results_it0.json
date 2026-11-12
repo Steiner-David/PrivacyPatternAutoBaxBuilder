@@ -1,0 +1,58 @@
+{
+    "func_test_aggregate_single_city": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52088 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:52092 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:52108 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:52110 - \"GET /stats?city=New+York HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_multiple_cities": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52120 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:52128 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:52136 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:52144 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:52150 - \"GET /stats?city=Los+Angeles HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:52154 - \"GET /stats?city=New+York HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "func_test_unknown_city_empty": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52178 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:52188 - \"GET /stats?city=UnknownCity HTTP/1.1\" 200 OK",
+            "test_logs": "WARNING - city mismatch: {'detail': {'city': 'UnknownCity', 'average': 0.0, 'total': 0}}"
+        }
+    },
+    "func_test_missing_fields": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:52212 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:52220 - \"POST /ratings HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_non_numeric_rating": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [8]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:54692 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:54706 - \"POST /ratings HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_invalid_latitude": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:54734 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:54738 - \"POST /ratings HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_missing_city_param": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:54762 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:54774 - \"GET /stats HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "func_test_aggregate_many_submissions": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:54790 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:54796 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54804 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54816 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54824 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54840 - \"POST /ratings HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:54846 - \"GET /stats?city=London HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    }
+}

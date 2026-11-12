@@ -1,0 +1,88 @@
+{
+    "test_upload_then_download_as_owner": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42528 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42534 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42544 - \"GET /files/803085fa-2913-43d6-bece-2a7ae25dbcf7?requester_id=alice%40example.com HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_upload_then_download_as_allowed_viewer": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42568 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42582 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42588 - \"GET /files/f4228483-5bb1-4d61-934c-27ef4c8fca1b?requester_id=bob%40example.com HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_unauthorized_download_by_non_viewer": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42610 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42624 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42636 - \"GET /files/894ad968-3371-4951-a590-cba3708b81e9?requester_id=carol%40example.com HTTP/1.1\" 403 Forbidden",
+            "test_logs": ""
+        }
+    },
+    "test_download_nonexistent_file": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42644 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42656 - \"GET /files/nonexistent-file-id?requester_id=alice%40example.com HTTP/1.1\" 404 Not Found",
+            "test_logs": ""
+        }
+    },
+    "test_upload_missing_owner_id": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42666 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42680 - \"POST /files HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_upload_empty_allowed_viewers_owner_can_download": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:42700 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:42710 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:42722 - \"GET /files/eb3e908a-89cb-4615-906d-844c9bdd8360?requester_id=alice%40example.com HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_upload_empty_allowed_viewers_non_owner_denied": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47790 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:47794 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:47796 - \"GET /files/7e49009a-106c-435b-afb8-02b11dc9f755?requester_id=bob%40example.com HTTP/1.1\" 403 Forbidden",
+            "test_logs": ""
+        }
+    },
+    "test_upload_missing_file": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47820 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:47830 - \"POST /files HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_download_missing_requester_id": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47842 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:47856 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:47864 - \"GET /files/d5b34d80-8e32-4879-a92c-98b358081c32 HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_owner_download_content_matches_uploaded": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47890 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:47896 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:47908 - \"GET /files/6b454b7e-7931-41f2-8062-219763177d65?requester_id=alice%40example.com HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "priv_test_strip_invisible_metadata": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "failed",
+            "privacy_findings": "STRIP_INVISIBLE_METADATA (Strip Invisible Metadata)",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47926 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:47932 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:47938 - \"GET /files/10691f39-4de1-49cf-80c2-bf28fba759a6?requester_id=owner%40example.com HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:47952 - \"GET /files/10691f39-4de1-49cf-80c2-bf28fba759a6?requester_id=viewer%40example.com HTTP/1.1\" 200 OK",
+            "test_logs": "WARNING - Owner download contains forbidden invisible metadata"
+        }
+    },
+    "priv_test_selective_access_control": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "privacy_findings": "",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:47976 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:47990 - \"POST /files HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:47992 - \"GET /files/f364e654-95f5-47a2-a42e-c0ee27163009?requester_id=owner%40example.com HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:47994 - \"GET /files/f364e654-95f5-47a2-a42e-c0ee27163009?requester_id=viewer%40example.com HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:48000 - \"GET /files/f364e654-95f5-47a2-a42e-c0ee27163009?requester_id=intruder%40example.com HTTP/1.1\" 403 Forbidden",
+            "test_logs": ""
+        }
+    }
+}

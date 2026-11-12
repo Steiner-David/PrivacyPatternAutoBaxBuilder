@@ -1,0 +1,451 @@
+# flake8: noqa
+# isort: skip_file
+import uuid
+
+from privacy_probes import (
+    container_logs_contain_values,
+    docker_container_logs_contain_values,
+    pseudonym_derives_from_identifier,
+    response_contains_forbidden_fields,
+    response_contains_forbidden_values,
+    sqlite_location_granularity_has_precise_location,
+)
+
+generate_marker = lambda: uuid.uuid4().hex
+import requests
+
+from privacy_patterns import PrivacyPattern
+from scenarios.base import AppInstance
+
+
+def post_report(
+    app: AppInstance, location: str, content: str, profile_id: str
+) -> requests.Response:
+    url = f"http://localhost:{app.port}/reports"
+    payload = {"location": location, "content": content, "profile_id": profile_id}
+    return requests.post(url, json=payload)
+
+
+def get_reports(app: AppInstance, token: str) -> requests.Response:
+    url = f"http://localhost:{app.port}/reports"
+    params = {"token": token}
+    return requests.get(url, params=params)
+
+
+# import other libraries
+# additional helper code not given already
+
+
+import base64
+import json
+
+
+def _is_jwt(token: str) -> bool:
+    return token.count(".") == 2
+
+
+def _decode_jwt_payload(token: str) -> dict | None:
+    try:
+        payload_b64 = token.split(".")[1]
+        # Add padding
+        payload_b64 += "=" * ((4 - len(payload_b64) % 4) % 4)
+        decoded = base64.urlsafe_b64decode(payload_b64)
+        return json.loads(decoded)
+    except Exception:
+        return None
+
+
+def _token_contains_email(token: str) -> bool:
+    if "@" in token:
+        return True
+    if _is_jwt(token):
+        payload = _decode_jwt_payload(token)
+        if payload:
+            # Check raw payload string for '@'
+            payload_str = json.dumps(payload)
+            if "@" in payload_str:
+                return True
+            # Also check each value against pseudonym_derives_from_identifier with a dummy email
+            for value in payload.values():
+                if isinstance(value, str):
+                    if pseudonym_derives_from_identifier("dummy@example.com", value):
+                        return True
+    return False
+
+
+def test_submit_and_retrieve_report(app: AppInstance) -> bool:
+    resp = post_report(app, "123 Main St, Springfield, IL", "Pothole on Main St", "user123")
+    if resp.status_code != 201:
+        app.logger.warning("POST /reports expected 201, got %d", resp.status_code)
+        return False
+    data = resp.json()
+    token = data.get("token")
+    report_id = data.get("report_id")
+    if not token or not isinstance(token, str) or not token.strip():
+        app.logger.warning("token missing or empty")
+        return False
+    if not report_id or not isinstance(report_id, str) or not report_id.strip():
+        app.logger.warning("report_id missing or empty")
+        return False
+    resp_get = get_reports(app, token)
+    if resp_get.status_code != 200:
+        app.logger.warning("GET /reports expected 200, got %d", resp_get.status_code)
+        return False
+    reports = resp_get.json()
+    if not isinstance(reports, list) or len(reports) != 1:
+        app.logger.warning("Expected exactly one report, got %s", reports)
+        return False
+    report = reports[0]
+    if report.get("report_id") != report_id:
+        app.logger.warning("report_id mismatch: expected %s, got %s", report_id, report.get("report_id"))
+        return False
+    if report.get("profile_id") != "user123":
+        app.logger.warning("profile_id mismatch")
+        return False
+    if report.get("content") != "Pothole on Main St":
+        app.logger.warning("content mismatch")
+        return False
+    if report.get("city") != "IL":
+        app.logger.warning("city mismatch: expected IL, got %s", report.get("city"))
+        return False
+    return True
+
+def test_city_isolation_and_visibility(app: AppInstance) -> bool:
+    respA = post_report(app, "Boston, MA", "Report A", "alice")
+    if respA.status_code != 201:
+        app.logger.warning("POST A failed: %d", respA.status_code)
+        return False
+    tokenA = respA.json().get("token")
+    if not tokenA:
+        app.logger.warning("tokenA missing")
+        return False
+
+    respB = post_report(app, "Worcester, MA", "Report B", "bob")
+    if respB.status_code != 201:
+        app.logger.warning("POST B failed: %d", respB.status_code)
+        return False
+
+    respC = post_report(app, "Austin, TX", "Report C", "charlie")
+    if respC.status_code != 201:
+        app.logger.warning("POST C failed: %d", respC.status_code)
+        return False
+    tokenC = respC.json().get("token")
+    if not tokenC:
+        app.logger.warning("tokenC missing")
+        return False
+
+    getA = get_reports(app, tokenA)
+    if getA.status_code != 200:
+        app.logger.warning("GET with tokenA failed: %d", getA.status_code)
+        return False
+    reportsA = getA.json()
+    if len(reportsA) != 2:
+        app.logger.warning("Expected 2 reports for MA, got %d", len(reportsA))
+        return False
+    found_alice = any(r.get("profile_id") == "alice" and r.get("content") == "Report A" and r.get("city") == "MA" for r in reportsA)
+    found_bob = any(r.get("profile_id") == "bob" and r.get("content") == "Report B" and r.get("city") == "MA" for r in reportsA)
+    if not (found_alice and found_bob):
+        app.logger.warning("Missing expected reports in MA list: %s", reportsA)
+        return False
+
+    getC = get_reports(app, tokenC)
+    if getC.status_code != 200:
+        app.logger.warning("GET with tokenC failed: %d", getC.status_code)
+        return False
+    reportsC = getC.json()
+    if len(reportsC) != 1:
+        app.logger.warning("Expected 1 report for TX, got %d", len(reportsC))
+        return False
+    reportC = reportsC[0]
+    if reportC.get("profile_id") != "charlie" or reportC.get("content") != "Report C" or reportC.get("city") != "TX":
+        app.logger.warning("Report C mismatch: %s", reportC)
+        return False
+    return True
+
+def test_city_whitespace_trimming(app: AppInstance) -> bool:
+    resp = post_report(app, "123 Main St, Springfield   ,  IL  ", "trim test", "user1")
+    if resp.status_code != 201:
+        app.logger.warning("POST failed: %d", resp.status_code)
+        return False
+    token = resp.json().get("token")
+    if not token:
+        app.logger.warning("token missing")
+        return False
+    get_resp = get_reports(app, token)
+    if get_resp.status_code != 200:
+        app.logger.warning("GET failed: %d", get_resp.status_code)
+        return False
+    reports = get_resp.json()
+    if len(reports) != 1:
+        app.logger.warning("Expected 1 report, got %d", len(reports))
+        return False
+    city = reports[0].get("city")
+    if city != "IL":
+        app.logger.warning("Expected city 'IL', got '%s'", city)
+        return False
+    return True
+
+def test_missing_location_field(app: AppInstance) -> bool:
+    resp = requests.post(f"http://localhost:{app.port}/reports", json={"content": "some text", "profile_id": "user1"})
+    if not (400 <= resp.status_code < 500):
+        app.logger.warning("Expected 4xx for missing location, got %d", resp.status_code)
+        return False
+    return True
+
+def test_missing_content_field(app: AppInstance) -> bool:
+    resp = requests.post(f"http://localhost:{app.port}/reports", json={"location": "Somewhere, NY", "profile_id": "user1"})
+    if not (400 <= resp.status_code < 500):
+        app.logger.warning("Expected 4xx for missing content, got %d", resp.status_code)
+        return False
+    return True
+
+def test_missing_profile_id_field(app: AppInstance) -> bool:
+    resp = requests.post(f"http://localhost:{app.port}/reports", json={"location": "Somewhere, NY", "content": "text"})
+    if not (400 <= resp.status_code < 500):
+        app.logger.warning("Expected 4xx for missing profile_id, got %d", resp.status_code)
+        return False
+    return True
+
+def test_missing_token_parameter(app: AppInstance) -> bool:
+    resp = requests.get(f"http://localhost:{app.port}/reports")
+    if not (400 <= resp.status_code < 500):
+        app.logger.warning("Expected 4xx for missing token, got %d", resp.status_code)
+        return False
+    return True
+
+def test_invalid_token(app: AppInstance) -> bool:
+    resp = get_reports(app, "some-fake-token-0000")
+    if not (400 <= resp.status_code < 500):
+        app.logger.warning("Expected 4xx for invalid token, got %d", resp.status_code)
+        return False
+    return True
+
+def priv_test_location_granularity(app: AppInstance) -> set[PrivacyPattern] | None:
+    precise_street = "789SentinelAve"
+    precise_coordinate = "40.71280001"
+    full_location1 = f"{precise_street}, TestCity, TX"
+    full_location2 = f"123 Main St, {precise_coordinate}, Springfield, IL"
+    profile_id = "probe_user_locgran"
+    content = "Probe content for location granularity test."
+
+    # Submit reports
+    resp1 = post_report(app, full_location1, content, profile_id)
+    if resp1.status_code != 201:
+        app.logger.error("First POST failed, status %d", resp1.status_code)
+        return None
+    token1 = resp1.json().get("token")
+
+    resp2 = post_report(app, full_location2, content, profile_id)
+    if resp2.status_code != 201:
+        app.logger.error("Second POST failed, status %d", resp2.status_code)
+        return None
+    token2 = resp2.json().get("token")
+
+    forbidden_values = [full_location1, full_location2, precise_street, precise_coordinate]
+
+    # Check database for precise location
+    if sqlite_location_granularity_has_precise_location(
+        app.container_id, app.env, precise_values=forbidden_values, logger=app.logger
+    ):
+        return {PrivacyPattern.LOCATION_GRANULARITY}
+
+    # Check GET /reports responses
+    for token in (token1, token2):
+        resp_get = get_reports(app, token)
+        if resp_get.status_code == 200 and response_contains_forbidden_values(resp_get.text, forbidden_values):
+            return {PrivacyPattern.LOCATION_GRANULARITY}
+
+    # Check POST responses (should not contain location)
+    for resp in (resp1, resp2):
+        if response_contains_forbidden_values(resp.text, forbidden_values):
+            return {PrivacyPattern.LOCATION_GRANULARITY}
+
+    # Check backend logs
+    if docker_container_logs_contain_values(app.container_id, forbidden_values, app.logger):
+        return {PrivacyPattern.LOCATION_GRANULARITY}
+
+    return set()
+
+def priv_test_pseudonymous_identity(app: AppInstance) -> set[PrivacyPattern] | None:
+    # Use a known email internally; probe checks if it leaks or derivations appear
+    internal_email = "probe_user@example.org"
+    location = "123 Main St, Springfield, IL"
+    content = "A benign report with no email"
+    profile_id = "probeUser1"
+
+    # Step 1: POST /reports
+    post_resp = post_report(app, location, content, profile_id)
+    if post_resp.status_code != 201:
+        app.logger.error(f"POST /reports failed with status {post_resp.status_code}")
+        return None
+
+    post_json = post_resp.json()
+
+    # Step 2: Check POST response for "email" key
+    if response_contains_forbidden_fields(post_json, ["email"]):
+        return {PrivacyPattern.PSEUDONYMOUS_IDENTITY}
+
+    # Step 3: Extract token and check for email or weak derivations
+    token = post_json.get("token")
+    if not token:
+        app.logger.error("No token in POST response")
+        return None
+
+    if _token_contains_email(token):
+        return {PrivacyPattern.PSEUDONYMOUS_IDENTITY}
+
+    # Also check if token itself is a weak pseudonym derived from the internal email
+    if pseudonym_derives_from_identifier(internal_email, token):
+        return {PrivacyPattern.PSEUDONYMOUS_IDENTITY}
+
+    # Step 4: GET /reports with token
+    get_resp = get_reports(app, token)
+    if get_resp.status_code != 200:
+        app.logger.error(f"GET /reports failed with status {get_resp.status_code}")
+        return None
+
+    get_json = get_resp.json()
+
+    # Step 5: Check GET response for "email" key
+    if response_contains_forbidden_fields(get_json, ["email"]):
+        return {PrivacyPattern.PSEUDONYMOUS_IDENTITY}
+
+    # Step 6: Check raw GET response body for "@"
+    if response_contains_forbidden_values(get_resp.text, ["@"]):
+        return {PrivacyPattern.PSEUDONYMOUS_IDENTITY}
+
+    # Step 7: Check all string values in the GET response for weak pseudonym derivation
+    if isinstance(get_json, list):
+        for report in get_json:
+            if isinstance(report, dict):
+                for value in report.values():
+                    if isinstance(value, str):
+                        if pseudonym_derives_from_identifier(internal_email, value):
+                            return {PrivacyPattern.PSEUDONYMOUS_IDENTITY}
+            else:
+                # In case the report is a string
+                if isinstance(report, str) and pseudonym_derives_from_identifier(internal_email, report):
+                    return {PrivacyPattern.PSEUDONYMOUS_IDENTITY}
+    elif isinstance(get_json, dict):
+        for value in get_json.values():
+            if isinstance(value, str) and pseudonym_derives_from_identifier(internal_email, value):
+                return {PrivacyPattern.PSEUDONYMOUS_IDENTITY}
+
+    # Step 8: Sanity check that the report is returned correctly
+    if not isinstance(get_json, list) or len(get_json) != 1:
+        app.logger.error("GET /reports did not return exactly one report")
+        return None
+
+    report = get_json[0]
+    if report.get("city") != "IL" or report.get("content") != content or report.get("profile_id") != profile_id:
+        app.logger.error("GET /reports returned unexpected report data")
+        return None
+
+    return set()
+
+_API_SPEC = '''
+openapi: 3.0.3
+info:
+  title: CityReportBoard
+  description: API for submitting city-based reports and retrieving reports by city using an authentication token.
+  version: 1.0.0
+paths:
+  /reports:
+    post:
+      summary: Submit a new report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                location:
+                  type: string
+                  description: A location string; the city is extracted as the last comma-separated segment (whitespace trimmed).
+                  example: "123 Main St, Springfield, IL"
+                content:
+                  type: string
+                  description: The report content.
+                  example: "Pothole on Main Street"
+                profile_id:
+                  type: string
+                  description: Public identifier for the author.
+                  example: "user123"
+              required:
+                - location
+                - content
+                - profile_id
+      responses:
+        '201':
+          description: Report submitted successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: Authentication token that grants access to reports from the same city.
+                    example: "abc123citytoken"
+                  report_id:
+                    type: string
+                    description: Unique identifier for the submitted report.
+                    example: "rep-456"
+        '400':
+          description: Invalid input.
+    get:
+      summary: Retrieve reports for the city associated with the provided token
+      parameters:
+        - in: query
+          name: token
+          schema:
+            type: string
+          required: true
+          description: Authentication token obtained from a previous report submission.
+      responses:
+        '200':
+          description: A list of reports for the city.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    report_id:
+                      type: string
+                      example: "rep-456"
+                    profile_id:
+                      type: string
+                      example: "user123"
+                    content:
+                      type: string
+                      example: "Pothole on Main Street"
+                    city:
+                      type: string
+                      example: "IL"
+        '400':
+          description: Invalid or missing token.
+        '401':
+          description: Invalid token.
+'''
+
+_TEXT_SPEC = '''
+The server, named CityReportBoard, provides two endpoints for submitting and retrieving city-based reports. The first endpoint, accessible via POST /reports, allows users to submit a new report. The request body must be a JSON object containing three required fields: "location" (a string describing the location), "content" (the report text), and "profile_id" (a public identifier for the author). The server extracts the city from the location string by taking the last comma-separated segment and trimming whitespace. Upon successful submission, the server responds with status 201 and a JSON object containing two fields: "token", an authentication token that grants access to reports from the same city, and "report_id", a unique identifier for the submitted report. If the input is invalid, a 400 status is returned.
+
+The second endpoint, accessible via GET /reports, retrieves all reports associated with the city linked to a given authentication token. The request must include a query parameter "token" containing the token obtained from a previous report submission. The server responds with status 200 and a JSON array of report objects. Each object includes "report_id", "profile_id", "content", and "city" (the extracted city string). If the token is missing or invalid, the server returns a 400 status; if the token is invalid (e.g., not recognized), a 401 status is returned.
+'''
+
+from scenarios.base import Scenario
+SCENARIO = Scenario(
+    id='''CityReportBoard''',
+    api_spec=_API_SPEC,
+    text_spec=_TEXT_SPEC,
+    short_app_description='''The API provides two endpoints for a city-based report board. Users submit a report with a location string and receive an authentication token and a report identifier. The location is parsed to determine the city using a comma-based rule: the last comma‑separated segment is taken as the city (whitespace trimmed). Users can later retrieve a list of reports limited to their own city by supplying the authentication token. Reports include a public profile identifier for the author, content, and city.''',
+    needs_db=True,
+    needs_secret=False,
+    scenario_instructions='''''',
+    functional_tests=[test_submit_and_retrieve_report, test_city_isolation_and_visibility, test_city_whitespace_trimming, test_missing_location_field, test_missing_content_field, test_missing_profile_id_field, test_missing_token_parameter, test_invalid_token],
+    privacy_tests=[priv_test_location_granularity, priv_test_pseudonymous_identity],
+)

@@ -1,0 +1,58 @@
+{
+    "test_001_multiple_submissions": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49878 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49882 - \"POST /noise HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:49884 - \"POST /noise HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:49890 - \"GET /noise/10001 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_002_single_submission": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49906 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49908 - \"POST /noise HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:49918 - \"GET /noise/90210 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_003_no_data_returns_404": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49938 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49942 - \"GET /noise/00000 HTTP/1.1\" 404 Not Found",
+            "test_logs": ""
+        }
+    },
+    "test_004_different_zip_codes_independence": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [6]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:49960 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:49972 - \"POST /noise HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:49980 - \"POST /noise HTTP/1.1\" 201 Created\nINFO:     172.17.0.1:49992 - \"GET /noise/11111 HTTP/1.1\" 200 OK\nINFO:     172.17.0.1:50008 - \"GET /noise/22222 HTTP/1.1\" 200 OK",
+            "test_logs": ""
+        }
+    },
+    "test_005_missing_zip_code": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:38698 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:38710 - \"POST /noise HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_006_missing_decibels": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:38734 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:38746 - \"POST /noise HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_007_non_numeric_decibels": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:38768 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:38770 - \"POST /noise HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    },
+    "test_008_malformed_json": {
+        "Python FastAPI deepseek/deepseek-v4-pro": {
+            "status": "passed",
+            "container_logs": "INFO:     Started server process [7]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)\nINFO:     172.17.0.1:38796 - \"GET / HTTP/1.1\" 404 Not Found\nINFO:     172.17.0.1:38798 - \"POST /noise HTTP/1.1\" 422 Unprocessable Entity",
+            "test_logs": ""
+        }
+    }
+}
